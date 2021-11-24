@@ -5,28 +5,22 @@ package uni.makarov.hw6;
 public class AbstractFactory {
 
     public static void main(String[] args) {
-        Cars cars = new Cars();
-        Engines engines = new Engines();
+        CarFactory carFactory = new ToyotaFactory();
+        Car mycar = carFactory.createCar();
+        mycar.getInfo();
+        Engine myengine = carFactory.createEngine();
+        myengine.getPower();
 
-        Factories.CarFactory carFactory = new Factories.ToyotaFactory();
+        CarFactory carFactory1 = new ToyotaFactory();
+        Car mycar1 = carFactory.createCar();
+        mycar1.getInfo();
+        Engine myengine1 = carFactory.createEngine();
+        myengine1.getPower();
 
-        Cars.Car myCar = carFactory.createCar();
-        myCar.info();
-        Engines.Engine myEngine = carFactory.createEngine();
-        myEngine.getPower();
-
-        carFactory = new Factories.FordFactory();
-
-        myCar = carFactory.createCar();
-        myCar.info();
-        myEngine = carFactory.createEngine();
-        myEngine.getPower();
-
-        carFactory = new Factories.MersederFactory();
-
-        myCar = carFactory.createCar();
-        myCar.info();
-        myEngine = carFactory.createEngine();
-        myEngine.getPower();
+        CarFactory carFactory2 = new MersedesFactory();
+        Car mycar2 = carFactory2.createCar();
+        mycar2.getInfo();
+        Engine myengine2 = carFactory2.createEngine();
+        myengine2.getPower();
     }
 }
